@@ -3,12 +3,14 @@
 
 def good_triplets(arr, a, b, c):
     # Find all combinations of 3 elements
+    arr.reverse()
     all_triplets = enumerate_combinations(arr, 3)
 
     # Check conditions for good triplets for each combination
     counter = 0
     for triplet in all_triplets:
-        if checkTriplet(triplet, a, b, c): counter = counter + 1
+        if checkTriplet(triplet, a, b, c):
+            counter = counter + 1
 
     # Return the number of valid good triplets
     return counter
@@ -36,7 +38,7 @@ def checkTriplet(triplet, a, b, c):
     return condition_a and condition_b and condition_c
 
 
-input_array = [3, 0, 0, 1, 1, 9, 7]
+input_array = [3, 0, 1, 1, 9, 7]
 a = 7
 b = 2
 c = 3
